@@ -1,3 +1,4 @@
+USE mysql_database;
 INSERT INTO Fornecedor (cnpj, e_mail, nome_fantasia, telefone)
 VALUES    
     ('00000000000001','contato@voala.com','VoaLa Linhas Aéreas','(87)99999-0001'),   
@@ -91,18 +92,21 @@ VALUES    ('10000000001', 2, 1, '2025-09-21', 'PARCIAL', 2500.00);
 
 INSERT INTO Reserva_Dependente (id_reserva, cliente_cpf, nome_dependente)
 SELECT id_reserva, '10000000001', 'Dependente 1'
-FROM ReservaWHERE cliente_cpf='10000000001'
-ORDER BY id_reserva DESCLIMIT 1;
+FROM Reserva WHERE cliente_cpf = '10000000001'
+ORDER BY id_reserva DESC 
+LIMIT 1;
 
 INSERT INTO Pagamento (id_reserva, num_parcela, data_pagamento, data_vencimento, meio_pagamento, status_parcela)
 SELECT id_reserva, 1, '2025-09-21', '2025-10-06', 'PIX', 'PAGA'
-FROM ReservaWHERE cliente_cpf='10000000001'
-ORDER BY id_reserva DESCLIMIT 1;
+FROM Reserva WHERE cliente_cpf = '10000000001'
+ORDER BY id_reserva DESC 
+LIMIT 1;
 
 INSERT INTO Pagamento (id_reserva, num_parcela, data_pagamento, data_vencimento, meio_pagamento, status_parcela)
 SELECT id_reserva, 2, NULL, '2025-10-21', 'PIX', 'PENDENTE'
-FROM ReservaWHERE cliente_cpf='10000000001'
-ORDER BY id_reserva DESCLIMIT 1;
+FROM Reserva WHERE cliente_cpf = '10000000001'
+ORDER BY id_reserva DESC 
+LIMIT 1;
 
 INSERT INTO Cliente (cpf, cidade, nome, numero, rua)
 VALUES    ('10000000002','Petrolina','Cliente 2','11','Rua B');
@@ -118,18 +122,20 @@ VALUES    ('10000000002', 3, 2, '2025-09-21', 'PARCIAL', 1200.00);
 
 INSERT INTO Reserva_Dependente (id_reserva, cliente_cpf, nome_dependente)
 SELECT id_reserva, '10000000002', 'Dependente 2'
-FROM ReservaWHERE cliente_cpf='10000000002'
-ORDER BY id_reserva DESCLIMIT 1;
+FROM Reserva WHERE cliente_cpf = '10000000002'
+ORDER BY id_reserva DESC 
+LIMIT 1;
 
 INSERT INTO Pagamento (id_reserva, num_parcela, data_pagamento, data_vencimento, meio_pagamento, status_parcela)
 SELECT id_reserva, 1, '2025-09-21', '2025-10-06', 'CARTAO', 'PAGA'
-FROM ReservaWHERE cliente_cpf='10000000002'
-ORDER BY id_reserva DESCLIMIT 1;
+FROM Reserva WHERE cliente_cpf = '10000000002'
+ORDER BY id_reserva DESC 
+LIMIT 1;
 
 INSERT INTO Pagamento (id_reserva, num_parcela, data_pagamento, data_vencimento, meio_pagamento, status_parcela)
 SELECT id_reserva, 2, NULL, '2025-10-21', 'CARTAO', 'PENDENTE'
-FROM ReservaWHERE cliente_cpf='10000000002'
-ORDER BY id_reserva DESCLIMIT 1;
+FROM Reserva WHERE cliente_cpf = '10000000002'
+ORDER BY id_reserva DESC LIMIT 1;
 
 INSERT INTO Cliente (cpf, cidade, nome, numero, rua)
 VALUES    ('10000000003','Petrolina','Cliente 3','12','Rua C');
@@ -145,17 +151,18 @@ VALUES    ('10000000003', 2, 2, '2025-09-21', 'PARCIAL', 4500.00);
 
 INSERT INTO Reserva_Dependente (id_reserva, cliente_cpf, nome_dependente)
 SELECT id_reserva, '10000000003', 'Dependente 3'
-FROM ReservaWHERE cliente_cpf='10000000003'
-ORDER BY id_reserva DESCLIMIT 1;
+FROM Reserva WHERE cliente_cpf = '10000000003'
+ORDER BY id_reserva DESC LIMIT 1;
 
 INSERT INTO Pagamento (id_reserva, num_parcela, data_pagamento, data_vencimento, meio_pagamento, status_parcela)
 SELECT id_reserva, 1, '2025-09-21', '2025-10-06', 'CARTAO', 'PAGA'
-FROM ReservaWHERE cliente_cpf='10000000003'
-ORDER BY id_reserva DESCLIMIT 1;
+FROM Reserva WHERE cliente_cpf='10000000003'
+ORDER BY id_reserva DESC LIMIT 1;
 INSERT INTO Pagamento (id_reserva, num_parcela, data_pagamento, data_vencimento, meio_pagamento, status_parcela)
 SELECT id_reserva, 2, NULL, '2025-10-21', 'CARTAO', 'PENDENTE'
-FROM ReservaWHERE cliente_cpf='10000000003'
-ORDER BY id_reserva DESCLIMIT 1;
+FROM Reserva WHERE cliente_cpf = '10000000003'
+ORDER BY id_reserva DESC 
+LIMIT 1;
 
 INSERT INTO Cliente (cpf, cidade, nome, numero, rua)
 VALUES    ('10000000004','Petrolina','Cliente 4','13','Rua D');
@@ -171,18 +178,21 @@ VALUES    ('10000000004', 3, 1, '2025-09-21', 'PARCIAL', 2500.00);
 
 INSERT INTO Reserva_Dependente (id_reserva, cliente_cpf, nome_dependente)
 SELECT id_reserva, '10000000004', 'Dependente 4'
-FROM ReservaWHERE cliente_cpf='10000000004'
-ORDER BY id_reserva DESCLIMIT 1;
+FROM Reserva WHERE cliente_cpf = '10000000004'
+ORDER BY id_reserva DESC 
+LIMIT 1;
 
 INSERT INTO Pagamento (id_reserva, num_parcela, data_pagamento, data_vencimento, meio_pagamento, status_parcela)
 SELECT id_reserva, 1, '2025-09-21', '2025-10-06', 'PIX', 'PAGA'
-FROM ReservaWHERE cliente_cpf='10000000004'
-ORDER BY id_reserva DESCLIMIT 1;
+FROM Reserva WHERE cliente_cpf = '10000000004'
+ORDER BY id_reserva DESC
+LIMIT 1;
 
 INSERT INTO Pagamento (id_reserva, num_parcela, data_pagamento, data_vencimento, meio_pagamento, status_parcela)
 SELECT id_reserva, 2, NULL, '2025-10-21', 'PIX', 'PENDENTE'
-FROM ReservaWHERE cliente_cpf='10000000004'
-ORDER BY id_reserva DESCLIMIT 1;
+FROM Reserva WHERE cliente_cpf = '10000000004'
+ORDER BY id_reserva DESC 
+LIMIT 1;
 
 INSERT INTO Cliente (cpf, cidade, nome, numero, rua)
 VALUES    ('10000000005','Petrolina','Cliente 5','14','Rua E');
@@ -195,18 +205,20 @@ VALUES    ('10000000005', 2, 2, '2025-09-21', 'PARCIAL', 7000.00);
 
 INSERT INTO Pagamento (id_reserva, num_parcela, data_pagamento, data_vencimento, meio_pagamento, status_parcela)
 SELECT id_reserva, 1, '2025-09-21', '2025-10-06', 'BOLETO', 'PAGA'
-FROM ReservaWHERE cliente_cpf='10000000005'
-ORDER BY id_reserva DESCLIMIT 1;
+FROM Reserva WHERE cliente_cpf = '10000000005'
+ORDER BY id_reserva DESC LIMIT 1;
 
 INSERT INTO Pagamento (id_reserva, num_parcela, data_pagamento, data_vencimento, meio_pagamento, status_parcela)
 SELECT id_reserva, 2, NULL, '2025-10-21', 'BOLETO', 'PENDENTE'
-FROM ReservaWHERE cliente_cpf='10000000005'
-ORDER BY id_reserva DESCLIMIT 1;
+FROM Reserva WHERE cliente_cpf = '10000000005'
+ORDER BY id_reserva DESC 
+LIMIT 1;
 
 INSERT INTO Pagamento (id_reserva, num_parcela, data_pagamento, data_vencimento, meio_pagamento, status_parcela)
 SELECT id_reserva, 3, NULL, '2025-11-05', 'BOLETO', 'PENDENTE'
-FROM ReservaWHERE cliente_cpf='10000000005'
-ORDER BY id_reserva DESCLIMIT 1;
+FROM Reserva WHERE cliente_cpf = '10000000005'
+ORDER BY id_reserva DESC 
+LIMIT 1;
 
 INSERT INTO Cliente (cpf, cidade, nome, numero, rua)
 VALUES    ('10000000006','Petrolina','Cliente 6','15','Rua F');
@@ -218,13 +230,15 @@ VALUES    ('10000000006', 3, 2, '2025-09-21', 'PARCIAL', 4500.00);
 
 INSERT INTO Pagamento (id_reserva, num_parcela, data_pagamento, data_vencimento, meio_pagamento, status_parcela)
 SELECT id_reserva, 1, '2025-09-21', '2025-10-06', 'CARTAO', 'PAGA'
-FROM ReservaWHERE cliente_cpf='10000000006'
-ORDER BY id_reserva DESCLIMIT 1;
+FROM Reserva WHERE cliente_cpf = '10000000006'
+ORDER BY id_reserva DESC 
+LIMIT 1;
 
 INSERT INTO Pagamento (id_reserva, num_parcela, data_pagamento, data_vencimento, meio_pagamento, status_parcela)
 SELECT id_reserva, 2, NULL, '2025-10-21', 'CARTAO', 'PENDENTE'
-FROM ReservaWHERE cliente_cpf='10000000006'
-ORDER BY id_reserva DESCLIMIT 1;
+FROM Reserva WHERE cliente_cpf='10000000006'
+ORDER BY id_reserva DESC 
+LIMIT 1;
 
 INSERT INTO Cliente (cpf, cidade, nome, numero, rua)
 VALUES    ('10000000007','Petrolina','Cliente 7','16','Rua G');
@@ -237,13 +251,15 @@ VALUES    ('10000000007', 2, 1, '2025-09-21', 'PARCIAL', 1200.00);
 
 INSERT INTO Pagamento (id_reserva, num_parcela, data_pagamento, data_vencimento, meio_pagamento, status_parcela)
 SELECT id_reserva, 1, '2025-09-21', '2025-10-06', 'CARTAO', 'PAGA'
-FROM ReservaWHERE cliente_cpf='10000000007'
-ORDER BY id_reserva DESCLIMIT 1;
+FROM Reserva WHERE cliente_cpf = '10000000007'
+ORDER BY id_reserva DESC 
+LIMIT 1;
 
 INSERT INTO Pagamento (id_reserva, num_parcela, data_pagamento, data_vencimento, meio_pagamento, status_parcela)
 SELECT id_reserva, 2, NULL, '2025-10-21', 'CARTAO', 'PENDENTE'
-FROM ReservaWHERE cliente_cpf='10000000007'
-ORDER BY id_reserva DESCLIMIT 1;
+FROM Reserva WHERE cliente_cpf = '10000000007'
+ORDER BY id_reserva DESC 
+LIMIT 1;
 
 INSERT INTO Cliente (cpf, cidade, nome, numero, rua)
 VALUES    ('10000000008','Petrolina','Cliente 8','17','Rua H');
@@ -270,3 +286,4 @@ FROM Reserva
 WHERE cliente_cpf='10000000008'
 ORDER BY id_reserva DESC
 LIMIT 1;
+
